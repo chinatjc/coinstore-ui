@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { FC } from 'react';
+import './style.scss';
 
 interface LinkProps {
   className?: string;
@@ -8,11 +9,11 @@ interface LinkProps {
   href?: string;
 }
 
-export const Link: FC<LinkProps> = (props) => {
+const Link: FC<LinkProps> = (props) => {
   const { className, children, disabled, href } = props;
 
   return (
-    <a className={classNames('link', { disabled }, className)} href={href}>
+    <a className={classNames('link', { disabled }, className)} href={disabled ? undefined : href}>
       {children}
     </a>
   );

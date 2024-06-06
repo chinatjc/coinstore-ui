@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'normalize.css';
-import { Link } from './coinstore-ui';
+import { Button } from './coinstore-ui';
 
 const container = document.getElementById('root');
 
 const App = () => {
-  return <Link href="http://baidu.com">go to baidu</Link>;
+  return <Button className='wer' type="danger">Button</Button>;
 };
 
 if (container) {
