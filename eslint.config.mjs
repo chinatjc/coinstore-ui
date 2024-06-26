@@ -2,16 +2,26 @@ import { dirname } from 'node:path'; // 需要类型 @types/node
 import globals from 'globals';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-// @ts-expect-error
 import pluginReactRecommended from 'eslint-plugin-react/configs/recommended.js';
-// @ts-expect-error
 import pluginReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-// @ts-expect-error
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import configPrettier from 'eslint-config-prettier';
 
 // TODO: __dirname 不能有 file:// 。需要好好研究一下。
 const __dirname = dirname(import.meta.url).replace('file://', '');
+
+const banTsCommentRule = {
+  '@typescript-eslint/ban-ts-comment': [
+    'error',
+    {
+      'ts-expect-error': { descriptionFormat: '^: ts\\(\\d+\\) because .+$' },
+      'ts-ignore': { descriptionFormat: '^: ts\\(\\d+\\) because .+$' },
+      'ts-nocheck': { descriptionFormat: '^: ts\\(\\d+\\) because .+$' },
+      'ts-check': true,
+      minimumDescriptionLength: 10,
+    },
+  ],
+};
 
 export default tseslint.config(
   {
@@ -42,13 +52,14 @@ export default tseslint.config(
         ecmaVersion: 'latest',
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
-        EXPERIMENTAL_useSourceOfProjectReferenceRedirect: true
+        EXPERIMENTAL_useSourceOfProjectReferenceRedirect: true,
       },
     },
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     rules: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...pluginReactHooks.configs.recommended.rules,
+      ...banTsCommentRule,
     },
   },
   {
@@ -57,7 +68,13 @@ export default tseslint.config(
      * Can be applied to js files and ts files.
      * In order to ensure that the file can be configured appropriately, you need to set both eslint configuration and ts configuration.
      */
-    files: ['vite.config.ts', 'eslint.config.mjs', 'src/**/__tests__/**/*.ts', 'src/**/__tests__/**/*.tsx'],
+    files: [
+      'rollup.config.ts',
+      'vite.config.ts',
+      'eslint.config.mjs',
+      'src/**/__tests__/**/*.ts',
+      'src/**/__tests__/**/*.tsx',
+    ],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.strictTypeChecked,
@@ -68,12 +85,12 @@ export default tseslint.config(
       globals: globals.node,
       parserOptions: {
         ecmaVersion: 'latest',
-        project: './tsconfig.node.json',
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
     rules: {
-      '@typescript-eslint/ban-ts-comment': 'off',
+      ...banTsCommentRule,
     },
   },
 );

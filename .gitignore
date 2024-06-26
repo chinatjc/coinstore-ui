@@ -120,3 +120,5 @@ bak/
 stats.html
 
 yarn.lock
+
+*storybook.log
