@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { LinkProps } from './types';
 
 import classNames from 'classnames';
-// import './style.scss';
+import './style.scss';
 
 export const Link: FC<LinkProps> = ({ className, children, disabled, href }) => {
   return (

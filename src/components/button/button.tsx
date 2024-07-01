@@ -2,7 +2,7 @@ import type { ButtonProps } from './types';
 import type { FC } from 'react';
 
 import classNames from 'classnames';
-// import './style.scss';
+import './style.scss';
 
 export const Button: FC<ButtonProps> = ({
   className,

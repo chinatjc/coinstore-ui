@@ -6,7 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 
-// import './style.scss';
+import './style.scss';
 
 library.add(fas);
 
