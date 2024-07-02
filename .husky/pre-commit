@@ -1,2 +1,2 @@
-npm run tsc
-npm run lint
+npm run tsc-all
+npx --no-install lint-staged
