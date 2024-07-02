@@ -122,3 +122,5 @@ stats.html
 yarn.lock
 
 *storybook.log
+
+.rollup.cache
