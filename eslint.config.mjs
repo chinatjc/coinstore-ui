@@ -10,7 +10,7 @@ import configPrettier from 'eslint-config-prettier';
 // TODO: __dirname 不能有 file:// 。需要好好研究一下。
 const __dirname = dirname(import.meta.url).replace('file://', '');
 
-const banTsCommentRule = {
+const commonRules = {
   '@typescript-eslint/ban-ts-comment': [
     'error',
     {
@@ -19,6 +19,18 @@ const banTsCommentRule = {
       'ts-nocheck': { descriptionFormat: '^: ts\\(\\d+\\) because .+$' },
       'ts-check': true,
       minimumDescriptionLength: 10,
+    },
+  ],
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '^_',
+      caughtErrors: 'all',
+      caughtErrorsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      ignoreRestSiblings: true,
     },
   ],
 };
@@ -59,7 +71,7 @@ export default tseslint.config(
     rules: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...pluginReactHooks.configs.recommended.rules,
-      ...banTsCommentRule,
+      ...commonRules,
     },
   },
   {
@@ -90,7 +102,7 @@ export default tseslint.config(
       },
     },
     rules: {
-      ...banTsCommentRule,
+      ...commonRules,
     },
   },
 );
