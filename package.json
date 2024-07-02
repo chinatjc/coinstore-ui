@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "clean": "rimraf ./dist",
     "tsc": "tsc --noEmit",
     "build-ts": "npm run clean && tsc --build tsconfig.json",
     "build-es": "npm run clean && rollup --config rollup.config.ts --configPlugin typescript",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
@@ -65,6 +66,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "glob": "^10.4.2",
     "globals": "^15.0.0",
+    "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
