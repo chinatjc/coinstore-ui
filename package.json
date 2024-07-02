@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .rollup.cache --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "clean": "rimraf ./dist",
     "tsc": "tsc --noEmit",
