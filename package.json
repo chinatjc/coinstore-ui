@@ -1,8 +1,10 @@
 {
   "name": "constore-ui",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -21,6 +23,9 @@
     "build-storybook": "storybook build",
     "prepare": "husky"
   },
+  "sideEffects": [
+    "*.scss"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
