@@ -84,6 +84,7 @@ export default tseslint.config(
       'rollup.config.ts',
       'vite.config.ts',
       'eslint.config.mjs',
+      'commitlint.config.ts',
       'src/**/__tests__/**/*.ts',
       'src/**/__tests__/**/*.tsx',
     ],
