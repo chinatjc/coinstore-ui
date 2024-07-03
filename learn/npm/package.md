@@ -57,3 +57,19 @@
 > 数组匹配的文件，都有副作用；数组支持：相对路径，绝对路径，还有 glob 模式。
 
 sideEffects 就是为 tree shaking 服务的， 所以在打包某个模块之前，会先检查这个模块所属的 package.json 中的 sideEffects 标识，以此来判断这个模块是否有副作用，如果没有副作用的话，这些没用到的模块就不会被打包。
+
+## scripts - prepare
+
+在 `npm install` 安装完成之后，会自动执行 `scripts-prepare` 命令。
+
+## npm install / npm i
+
+声明周期脚本执行顺序：
+
+- preinstall
+- install
+- postinstall
+- prepublish
+- preprepare
+- prepare
+- postprepare
