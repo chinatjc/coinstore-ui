@@ -62,6 +62,21 @@ sideEffects 就是为 tree shaking 服务的， 所以在打包某个模块之�
 
 在 `npm install` 安装完成之后，会自动执行 `scripts-prepare` 命令。
 
+## scripts - prepublishOnly
+
+只在`npm publish`之前运行。
+
+## npm publish
+
+声明周期脚本执行顺序：
+
+- prepublishOnly
+- prepack
+- prepare
+- postpack
+- publish
+- postpublish
+
 ## npm install / npm i
 
 声明周期脚本执行顺序：
