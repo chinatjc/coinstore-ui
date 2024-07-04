@@ -5,6 +5,15 @@
 
 import type { Config } from 'jest';
 
+/**
+ * TODO:
+ *
+ * "test": "jest --bail --findRelatedTests --passWithNoTests"
+ *
+ * 1. 在上面的命令中，用“--passWithNoTests”指令忽略了没有测试脚本的情况，应该有要求：某些文件必须有测试脚本。
+ *
+ */
+
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -44,7 +53,14 @@ const config: Config = {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  coverageThreshold: {
+    global: {
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,

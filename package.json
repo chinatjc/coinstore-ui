@@ -21,7 +21,8 @@
     "build-es": "npm run clean && rollup --config rollup.config.ts --configPlugin typescript",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest --bail --passWithNoTests"
   },
   "files": [
     "dist"
