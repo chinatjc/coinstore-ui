@@ -85,6 +85,8 @@ export default tseslint.config(
       'vite.config.ts',
       'eslint.config.mjs',
       'commitlint.config.ts',
+      'jest.config.ts',
+      'jest-setup.ts',
       'src/**/__tests__/**/*.ts',
       'src/**/__tests__/**/*.tsx',
     ],
