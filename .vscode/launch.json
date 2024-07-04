@@ -14,7 +14,7 @@
         "--config",
         "rollup.config.ts",
         "--configPlugin",
-        "typescript",
+        "typescript"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",

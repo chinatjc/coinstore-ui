@@ -1,4 +1,4 @@
-import type { MouseEventHandler, ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from 'react';
 
 export type ButtonType = 'primary' | 'default' | 'danger';
 export type Size = 'large' | 'middle' | 'small';
