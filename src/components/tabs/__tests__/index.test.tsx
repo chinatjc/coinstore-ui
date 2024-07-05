@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import Tabs from '../index';
 import { randomString } from '../../../utils';
 
-describe('test Menu component', () => {
+describe('test Tabs component', () => {
   it('renders correctly', () => {
     const wrapper = render(
       <Tabs
@@ -29,7 +29,7 @@ describe('test Menu component', () => {
   });
 
   it('render the correct default menu', () => {
-    const defaultTabItemKey = '2';
+    const defaultTabKey = '2';
     const items = [
       {
         key: '1',
@@ -47,10 +47,10 @@ describe('test Menu component', () => {
         children: 'this is content three',
       },
     ];
-    const defaultTab = items.find(({ key }) => defaultTabItemKey === key);
-    const { queryByRole, queryByText } = render(<Tabs defaultTabItemKey={defaultTabItemKey} items={items} />);
+    const defaultTab = items.find(({ key }) => defaultTabKey === key);
+    const { queryByRole, queryByText } = render(<Tabs defaultTabKey={defaultTabKey} items={items} />);
 
-    if (!defaultTab) throw new Error('[Tabs test]: please set correctly defaultTabItemKey!');
+    if (!defaultTab) throw new Error('[Tabs test]: please set correctly defaultTabKey!');
 
     expect(queryByRole('tablist')).toHaveClass('nav-line');
 
@@ -58,7 +58,7 @@ describe('test Menu component', () => {
     expect(queryByText(defaultTab.children)).toBeInTheDocument();
 
     items
-      .filter(({ key }) => key !== defaultTabItemKey)
+      .filter(({ key }) => key !== defaultTabKey)
       .forEach(({ label, children }) => {
         expect(queryByRole('tab', { selected: true })?.innerHTML).not.toBe(label);
         expect(queryByText(children)).not.toBeInTheDocument();
@@ -186,17 +186,8 @@ describe('test Menu component', () => {
     expect(onSelect).not.toHaveBeenCalled();
   });
 
-  it('items should has a least one element', () => {
-    let errorMessage = '';
-
-    try {
-      render(<Tabs items={[]} />);
-    } catch (error) {
-      if (error && typeof error === 'object' && 'message' in error && typeof error.message === 'string') {
-        errorMessage = error.message;
-      }
-    }
-
-    expect(errorMessage).toBe('[component Tabs]: items should has a least one element');
+  it('render a empty list', () => {
+    const { queryAllByRole } = render(<Tabs items={[]} />);
+    expect(queryAllByRole('tab').length).toBe(0);
   });
 });

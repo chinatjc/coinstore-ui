@@ -10,7 +10,7 @@ interface TabItemType {
 }
 
 export interface TabsProps {
-  defaultTabItemKey?: TabItemKey;
+  defaultTabKey?: TabItemKey;
   className?: string;
   type?: TabsType;
   items: TabItemType[];

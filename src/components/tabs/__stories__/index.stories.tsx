@@ -12,7 +12,7 @@ const meta = {
     },
   },
   argTypes: {
-    defaultTabItemKey: {
+    defaultTabKey: {
       control: false,
     },
     items: {
@@ -87,7 +87,7 @@ export const Type: Story = {
 
 export const DefaultTabItemKey: Story = {
   args: {
-    defaultTabItemKey: '2',
+    defaultTabKey: '2',
     items: [
       {
         key: '1',
