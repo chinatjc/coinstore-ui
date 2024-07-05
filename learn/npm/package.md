@@ -88,3 +88,19 @@ sideEffects 就是为 tree shaking 服务的， 所以在打包某个模块之�
 - preprepare
 - prepare
 - postprepare
+
+## dependencies
+
+`npm包`的依赖项。
+
+1. 当`npm包`被安装到宿主环境时，正常情况下，其依赖项会安装到`<root>/node_modules`目录下。
+
+2. 当安装`npm包`时，其依赖项的版本号与宿主环境对应依赖项的版本号有冲突时，该依赖项会被安装到`<package>/node_modules`目录下。
+
+## peerDependencies
+
+对等依赖项。
+
+与`dependencies`类似，但有如下区别：
+
+1. 当安装`npm包`时，其依赖项的版本号与宿主环境对应依赖项的版本号有冲突时，直接会在控制台报错，退出安装程序。
