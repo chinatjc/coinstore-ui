@@ -17,7 +17,7 @@ const Transition: FC<TransitionProps> = (props) => {
       addEndListener={(done) => {
         // istanbul ignore else
         if (nodeRef.current) {
-          nodeRef.current.addEventListener('transitionend', done, false);
+          nodeRef.current.addEventListener('transitionend', done);
         }
       }}
       classNames={animation}
