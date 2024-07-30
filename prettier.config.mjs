@@ -1,4 +1,8 @@
-module.exports = {
+/**
+ * @see https://prettier.io/docs/en/configuration.html
+ * @type {import("prettier").Config}
+ */
+const config = {
   // 一行最多 120 字符
   printWidth: 120,
   // 使用 2 个空格缩进
@@ -41,3 +45,5 @@ module.exports = {
   // html, vue, jsx 中每个属性占一行
   singleAttributePerLine: false,
 };
+
+export default config;
