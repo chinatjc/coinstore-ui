@@ -6,11 +6,8 @@ on:
   push:
     branches: [main]
     paths: |
-      **/__stories__/*.@(mdx|js|jsx|mjs|ts|tsx)
-  pull_request:
-    branches: [main]
-    paths: |
-      **/__stories__/*.@(mdx|js|jsx|mjs|ts|tsx)
+      src/**/*.mdx
+      src/**/*.stories.@(js|jsx|mjs|ts|tsx)
 
   workflow_dispatch:
 
@@ -29,13 +26,12 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version: '21'
 
       - name: Install and Build 🔧
         run: |
-          CI=true pnpm install
-          pnpm run build-storybook
+          npm ci
+          npm run build-storybook
 
       - name: Deploy for GitHub 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.1
