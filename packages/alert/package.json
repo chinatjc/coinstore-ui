@@ -1,5 +1,5 @@
 {
-  "name": "@coinstore-ui/button",
+  "name": "@coinstore-ui/alert",
   "version": "0.0.1-alpha.1",
   "type": "module",
   "main": "dist/index.js",
@@ -11,6 +11,10 @@
   "sideEffects": [
     "*.scss"
   ],
+  "dependencies": {
+    "@coinstore-ui/icon": "workspace:^",
+    "@coinstore-ui/transition": "workspace:^"
+  },
   "peerDependencies": {
     "classnames": "^2.5.1",
     "react": ">=18.2.0",

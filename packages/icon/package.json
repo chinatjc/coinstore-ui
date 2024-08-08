@@ -1,5 +1,5 @@
 {
-  "name": "@coinstore-ui/button",
+  "name": "@coinstore-ui/icon",
   "version": "0.0.1-alpha.1",
   "type": "module",
   "main": "dist/index.js",
@@ -12,6 +12,9 @@
     "*.scss"
   ],
   "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "classnames": "^2.5.1",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0"

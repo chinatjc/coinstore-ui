@@ -1,5 +1,5 @@
 {
-  "name": "@coinstore-ui/button",
+  "name": "@coinstore-ui/link",
   "version": "0.0.1-alpha.1",
   "type": "module",
   "main": "dist/index.js",

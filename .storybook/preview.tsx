@@ -1,6 +1,4 @@
 import type { Preview } from '@storybook/react';
-import React from 'react';
-import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
 
 const preview: Preview = {
   parameters: {

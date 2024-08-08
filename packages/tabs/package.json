@@ -1,5 +1,5 @@
 {
-  "name": "@coinstore-ui/button",
+  "name": "@coinstore-ui/tabs",
   "version": "0.0.1-alpha.1",
   "type": "module",
   "main": "dist/index.js",
@@ -21,6 +21,8 @@
     "npm": ">=10.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3"
+    "@types/lodash": "^4.17.7",
+    "@types/react": "^18.3.3",
+    "lodash": "^4.17.21"
   }
 }

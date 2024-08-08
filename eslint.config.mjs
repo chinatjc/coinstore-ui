@@ -36,6 +36,7 @@ const commonRules = {
 };
 
 export default tsEslint.config({
+  ignores: ['**/dist/**/*'],
   settings: {
     // only for eslint-plugin-react
     react: {

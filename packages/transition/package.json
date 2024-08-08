@@ -1,5 +1,5 @@
 {
-  "name": "@coinstore-ui/button",
+  "name": "@coinstore-ui/transition",
   "version": "0.0.1-alpha.1",
   "type": "module",
   "main": "dist/index.js",
@@ -14,13 +14,15 @@
   "peerDependencies": {
     "classnames": "^2.5.1",
     "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "react-dom": ">=18.2.0",
+    "react-transition-group": "^4.4.5"
   },
   "engines": {
     "node": ">=21.1.0",
     "npm": ">=10.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3"
+    "@types/react": "^18.3.3",
+    "@types/react-transition-group": "^4.4.10"
   }
 }
