@@ -1,15 +1,12 @@
 {
   "name": "@coinstore-ui/base",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.0",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "clean": "rimraf ./dist",
     "lint-all": "eslint . --ignore-pattern dist --ignore-pattern coverage --ignore-pattern .rollup.cache --report-unused-disable-directives --max-warnings 0",
     "lint": "eslint --ignore-pattern dist --ignore-pattern coverage --ignore-pattern .rollup.cache --report-unused-disable-directives --max-warnings 0",
     "tsc-all": "tsc --noEmit",
@@ -25,12 +22,6 @@
     "test-all": "jest --bail",
     "prepublishOnly": "npm run prettier-check-all && npm run lint-all && npm run tsc-all && npm run test-all"
   },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "*.scss"
-  ],
   "devDependencies": {
     "@babel/core": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
