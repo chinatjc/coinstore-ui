@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     /* Emit */
-    "outDir": "dist",
     "declaration": true,
 
     /* Interop Constraints */
@@ -29,5 +28,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-  },
+  }
 }
