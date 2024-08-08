@@ -17,7 +17,6 @@
     "prettier-check": "prettier -c",
     "prettier-fix-all": "prettier . --ignore-unknown --write",
     "prettier-fix": "prettier --ignore-unknown --write",
-    "build-es1": "rollup --config rollup.config.ts --configPlugin typescript --environment TARGET:button111",
     "build-es": "rollup --config rollup.config.ts --configPlugin typescript --environment TARGET:all",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
